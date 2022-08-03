@@ -1,5 +1,74 @@
 @import "~bootstrap/scss/bootstrap";
 
 body{
-    color:red
+    display:flex;
+    background-color: $dark;
+    user-select: none;
+}
+
+.container{
+    color: $light;
+    margin-top: 40px;
+}
+
+.container__api-form{
+    border: 4px solid $info;
+    border-radius: 20px;
+    margin: 0 auto;
+    max-width: 400px;
+    margin-top: 40px;    
+    padding: 30px;
+
+}
+
+.container__api-form-info{
+    padding-bottom:15px;
+}
+
+.form-select{
+    margin: 0 auto;
+    max-width: 300px;
+}
+
+.form-select:focus{
+    box-shadow: none;
+    border: $dark;
+}
+
+
+.container__api-form-advice{
+    color:$light;
+    padding-top: 30px;
+    padding-bottom: 15px;
+}
+
+.form-control{
+    margin: 0 auto;
+    max-width: 300px;    
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border: $dark;
+}
+
+.container__api-form__buttons{
+    display: flex;
+    margin: 0 auto;
+    padding: 20px 17px 0px 17px;
+    justify-content: space-between;
+}
+
+.form-check{
+    padding-left: 0px;    
+}
+
+.form-check .form-check-input{
+    float:none;
+    margin-left: 0px;
+}
+
+.container__api-form__buttons-find{
+    width:100%;
+    max-width: 100px;
 }

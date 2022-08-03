@@ -8,9 +8,29 @@
         <title>StarWars-data</title>
     </head>
     <body ng-app>
-        <div class="container">
-
+        <div class="container text-center">
+            <h1 class="">Star Wars Search</h1>
+            <div class="container__api-form">
+                <h3 class="container__api-form-info">Looking for something?<br/>I can find it!</h3>
+                <select class="form-select">
+                    <option selected>Pick the category</option>
+                    <option value="People">People</option>
+                    <option value="Planet">Planet</option>
+                    <option value="Films">Films</option>
+                    <option value="Starships">Starships</option>
+                    <option value="Vehicles">Vehicles</option>
+                    <option value="Species">Species</option>
+                </select>
+                <h5 class="container__api-form-advice">Write name or leave the field empty,<br/> if you want to get all from category</h5>
+                <input type="text" class="form-control" id="container__api-form-input" placeholder="Name or id">
+                <div class="container__api-form__buttons">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="container__api-form__buttons-form-check">
+                        <label class="form-check-label" for="container__api-form__buttons-form-check">Wookiee</label>
+                    </div>
+                    <button type="button" class="btn btn-primary container__api-form__buttons-find">Find!</button>
+                </div>
+            </div>
         </div>
     </body>
-    <script src="./index.js"></script>
 </html>
