@@ -8,12 +8,12 @@
         <title>StarWars-data</title>
     </head>
     <body ng-controller="apiCtrl">
-        <div class="container text-center">{{apiVal}}
+        <div class="container text-center">
             <h1 class="">Star Wars Search</h1>
             <div class="container__api-form">
                 <h3 class="container__api-form-info">Looking for something?<br/>I can find it!</h3>
                 <select class="form-select" ng-model="apiVal">
-                    <option value="" selected>Pick the category</option>
+                    <option value="none" selected>Pick the category</option>
                     <option value="people">People</option>
                     <option value="planets">Planet</option>
                     <option value="films">Films</option>
@@ -22,16 +22,17 @@
                     <option value="species">Species</option>
                 </select>
                 <h5 class="container__api-form-advice">Write name or leave the field empty,<br/> if you want to get all from category</h5>
-                <input type="text" class="form-control" id="container__api-form-input" placeholder="Name or id">
+                <input type="text" class="form-control" id="container__api-form-input" placeholder="Name or id" ng-model="apiName">
                 <div class="container__api-form__buttons">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="container__api-form__buttons-form-check">
+                        <input class="form-check-input" type="checkbox" ng-model="apiWookie" ng-checked="isChecked" id="container__api-form__buttons-form-check">
                         <label class="form-check-label" for="container__api-form__buttons-form-check">Wookiee</label>
                     </div>
-                    <button type="button" class="btn btn-primary container__api-form__buttons-find">Find!</button>
+                    <button type="button" class="btn btn-primary container__api-form__buttons-find" ng-click="find()">Find!</button>
                 </div>
-                {{apiSelect}}
-
+                <div class="result" ng-model="result">
+                    {{result}}
+                </div>
             </div>
         </div>
     </body>
