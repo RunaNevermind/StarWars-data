@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="apiHandler">
     <head>
         <meta charset="UTF-8">
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
@@ -7,19 +7,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>StarWars-data</title>
     </head>
-    <body ng-app>
-        <div class="container text-center">
+    <body ng-controller="apiCtrl">
+        <div class="container text-center">{{apiVal}}
             <h1 class="">Star Wars Search</h1>
             <div class="container__api-form">
                 <h3 class="container__api-form-info">Looking for something?<br/>I can find it!</h3>
-                <select class="form-select">
-                    <option selected>Pick the category</option>
-                    <option value="People">People</option>
-                    <option value="Planet">Planet</option>
-                    <option value="Films">Films</option>
-                    <option value="Starships">Starships</option>
-                    <option value="Vehicles">Vehicles</option>
-                    <option value="Species">Species</option>
+                <select class="form-select" ng-model="apiVal">
+                    <option value="" selected>Pick the category</option>
+                    <option value="people">People</option>
+                    <option value="planets">Planet</option>
+                    <option value="films">Films</option>
+                    <option value="starships">Starships</option>
+                    <option value="vehicles">Vehicles</option>
+                    <option value="species">Species</option>
                 </select>
                 <h5 class="container__api-form-advice">Write name or leave the field empty,<br/> if you want to get all from category</h5>
                 <input type="text" class="form-control" id="container__api-form-input" placeholder="Name or id">
@@ -30,6 +30,8 @@
                     </div>
                     <button type="button" class="btn btn-primary container__api-form__buttons-find">Find!</button>
                 </div>
+                {{apiSelect}}
+
             </div>
         </div>
     </body>
