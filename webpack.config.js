@@ -13,6 +13,12 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.json$/,
+        use: {
+            loader: 'json-loader'
+        }
+      },
+      {
 				test: /\.(sa|sc|c)ss$/,
 				use: [
           MiniCssExtractPlugin.loader,
@@ -27,7 +33,8 @@ module.exports = {
               }
             }
           },
-					'sass-loader',          
+					'sass-loader',
+          
 				],
 			},
       {
