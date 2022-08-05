@@ -14,25 +14,19 @@ angular.module('apiHandler',[])
     $scope.apiWookie='';
     $scope.arrResult=[];
 
-
-
     $scope.find= function(){
-        
-        
         if($scope.apiName===''){
             fetch(baseUrl+$scope.apiVal+'/'+$scope.apiName+$scope.apiWookie)
             .then(res => res.json())
             .then(data => {
                 if($scope.apiVal==='films'){
                     for(var i = 0; i < data.result.length; i++){
-                        console.log(data.result[i].properties)
-                        $scope.arrResult.push(data.result[i].properties);     
+                        $scope.arrResult.push(data.result[i].properties)
                     }
 
                 }
                 else{
                     for(var i = 0; i < data.results.length; i++){
-                        console.log(data.results[i])
                         $scope.arrResult.push(data.results[i]);                    
                     }
                 }    
@@ -45,7 +39,6 @@ angular.module('apiHandler',[])
                 fetch(baseUrl+$scope.apiVal+'/?name='+$scope.apiName+$scope.apiWookie)
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data.result[0].properties)
                     $scope.arrResult.push(data.result[0].properties);
                 })
                 .catch(err => console.error(err)) 
@@ -55,21 +48,13 @@ angular.module('apiHandler',[])
                 fetch(baseUrl+$scope.apiVal+'/'+$scope.apiName+'/'+$scope.apiWookie)
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data.result.properties)
                     $scope.arrResult.push(data.result.properties);
                 })
-                .catch(err => console.error(err))    
+                .catch(err => console.error(err)) 
            
             }            
         }
-
  
     }
-});
 
-/*
-fetch('https://www.swapi.tech/api/people/')
-.then(res => res.json())
-.then(data => console.log(data))
-.catch(err => console.error(err))
-*/
+});

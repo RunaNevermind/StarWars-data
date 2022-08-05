@@ -12,7 +12,7 @@
             <h1 class='h1'>Star Wars Search</h1>
             <div class='container__api-form'>
                 <h3 class='container__api-form-info'>Looking for something?<br/>I can find it!</h3>
-                <select class='form-select' ng-model='apiVal'>
+                <select class='form-select dropdown-toggle' ng-model='apiVal'>
                     <option value='none' selected>Pick the category</option>
                     <option value='people'>People</option>
                     <option value='planets'>Planet</option>
@@ -24,10 +24,10 @@
                 <h5 class='container__api-form-advice'>Write name or leave the field empty,<br/> if you want to get all from category</h5>
                 <input type='text' class='form-control' id='container__api-form-input' placeholder='Name or id' ng-model='apiName'>
                 <div class='container__api-form__buttons'>
-                    <button type="button" class="btn btn-secondary" ng-model='apiWookie' ng-click='wookiee()'>Show</button>
+                    <button type="button" class="btn btn-secondary" ng-click='timeOut()'>Show</button>
                     <button type='button' class='btn btn-primary container__api-form__buttons-find' ng-click='find()'>Find!</button>
                 </div>
-                <div class='result text-center' ng-repeat="result in arrResult"  ng-model='arrResult'>
+                <div class='result text-center' ng-repeat="result in arrResult"  ng-model='arrResult' ng-model-options="{ getterSetter: true }">
                     <div class='resultApi' ng-model='result.name' ng-hide='result.name == undefinded'><div>Name:</div>{{result.name}}</div>
                     <div class='resultApi' ng-model='result.skin_color' ng-hide='result.skin_color == undefinded'><div>Skin color:</div>{{result.skin_color}}</div>
                     <div class='resultApi' ng-model='result.eye_color' ng-hide='result.eye_color == undefinded'><div>Eye color:</div>{{result.eye_color}}</div>
@@ -35,7 +35,7 @@
                     <div class='resultApi' ng-model='result.uid' ng-hide='result.uid == undefinded'><div>Episode id:</div>{{result.uid}}</div>
                     <div class='resultApi' ng-model='result.director'  ng-hide='result.director == undefinded'><div>Director:</div>{{result.director}}</div>
                     <div class='resultApi' ng-model='result.created'  ng-hide='result.created == undefinded'><div>Created:</div>{{result.created}}</div>
-                    <div class='resultApi' ng-model='result.opening_crawl'  ng-hide='result.opening_crawl == undefinded'><div>Opening crawl:</div>{{result.opening_crawl}}</div>
+                    <div class='result' ng-model='result.opening_crawl'  ng-hide='result.opening_crawl == undefinded'><div>Opening crawl:</div>{{result.opening_crawl}}</div>
                     <div class='resultApi' ng-model='result.release_date'  ng-hide='result.release_date == undefinded'><div>Release date:</div>{{result.release_date}}</div>
                     <div class='resultApi' ng-model='result.model'  ng-hide='result.model == undefinded'><div>Model:</div>{{result.model}}</div>
                     <div class='resultApi' ng-model='result.starship_class'  ng-hide='result.starship_class == undefinded'><div>Starshop Class:</div>{{result.starship_class}}</div>
