@@ -31,26 +31,25 @@
                     <button type='button' class='btn btn-primary container__api-form__buttons-find' ng-click='find()'>Find!</button>
                 </div>
                 <div class='result text-center' ng-repeat="result in arrResult"  ng-model='arrResult'>
-                    <div class='resultApi' ng-model='result.name'><div>Name:</div>{{result.name}}</div>
-
-                    <div class='resultApi' ng-model='result.skin_color'><div>Skin color:</div>{{result.skin_color}}</div>
-                    <div class='resultApi' ng-model='result.result.uid'><div>Episode id:</div>{{result.uid}}</div>
-                    <div class='resultApi' ng-model='result.result.director'><div>Director:</div>{{result.director}}</div>
-                    <div class='resultApi' ng-model='result.created'><div>Created:</div>{{result.created}}</div>
-                    <div class='resultApi'><div>Opening crawl:</div>{{arrResult.opening_crawl}}</div>
-                    <div class='resultApi'><div>Release date:</div>{{arrResult.release_date}}</div>
-                    <div class='resultApi'><div>Model:</div>{{arrResult.model}}</div>
-                    <div class='resultApi'><div>Starshop Class:</div>{{arrResult.starship_class}}</div>
-                    <div class='resultApi'><div>Crew:</div>{{arrResult.crew}}</div>
-                    <div class='resultApi'><div>Vehicle class:</div>{{arrResult.vehicle_class}}</div>
-                    <div class='resultApi'><div>Classificatio:</div>{{arrResult.classificatio}}</div>
-                    <div class='resultApi'><div>Designation:</div>{{arrResult.designation}}</div>
-                    <div class='resultApi'><div>Language:</div>{{arrResult.language}}</div>
-                    <div class='resultApi'><div>Diameter:</div>{{arrResult.diameter}}</div>
-                    <div class='resultApi'><div>Gravity:</div>{{arrResult.gravity}}</div>
-                    <div class='resultApi'><div>Popylation:</div>{{arrResult.population }}</div>
-                    <div class='resultApi'><div>Climate:</div>{{arrResult.climate}}</div>
-                    <div class='resultApi'><div>Surface water:</div>{{arrResult.surface_water}}</div>                    
+                    <div class='resultApi' ng-model='result.name' ng-hide='result.name == undefinded'><div>Name:</div>{{result.name}}</div>
+                    <div class='resultApi' ng-model='result.skin_color' ng-hide='result.skin_color == undefinded'><div>Skin color:</div>{{result.skin_color}}</div>
+                    <div class='resultApi' ng-model='result.uid' ng-hide='result.uid == undefinded'><div>Episode id:</div>{{result.uid}}</div>
+                    <div class='resultApi' ng-model='result.director'  ng-hide='result.director == undefinded'><div>Director:</div>{{result.director}}</div>
+                    <div class='resultApi' ng-model='result.created'  ng-hide='result.created == undefinded'><div>Created:</div>{{result.created}}</div>
+                    <div class='resultApi' ng-model='result.opening_crawl'  ng-hide='result.opening_crawl == undefinded'><div>Opening crawl:</div>{{result.opening_crawl}}</div>
+                    <div class='resultApi' ng-model='result.release_date'  ng-hide='result.release_date == undefinded'><div>Release date:</div>{{result.release_date}}</div>
+                    <div class='resultApi' ng-model='result.model'  ng-hide='result.model == undefinded'><div>Model:</div>{{result.model}}</div>
+                    <div class='resultApi' ng-model='result.starship_class'  ng-hide='result.starship_class == undefinded'><div>Starshop Class:</div>{{result.starship_class}}</div>
+                    <div class='resultApi' ng-model='result.crew'  ng-hide='result.crew == undefinded'><div>Crew:</div>{{result.crew}}</div>
+                    <div class='resultApi' ng-model='result.vehicle_class'  ng-hide='result.vehicle_class == undefinded'><div>Vehicle class:</div>{{result.vehicle_class}}</div>
+                    <div class='resultApi' ng-model='result.classificatio'  ng-hide='result.classificatio == undefinded'><div>Classificatio:</div>{{result.classificatio}}</div>
+                    <div class='resultApi' ng-model='result.designation'  ng-hide='result.designation == undefinded'><div>Designation:</div>{{result.designation}}</div>
+                    <div class='resultApi' ng-model='result.language'  ng-hide='result.language == undefinded'><div>Language:</div>{{result.language}}</div>
+                    <div class='resultApi' ng-model='result.diameter'  ng-hide='result.diameter == undefinded'><div>Diameter:</div>{{result.diameter}}</div>
+                    <div class='resultApi' ng-model='result.gravity'  ng-hide='result.gravity == undefinded'><div>Gravity:</div>{{result.gravity}}</div>
+                    <div class='resultApi' ng-model='result.population'  ng-hide='result.population == undefinded'><div>Popylation:</div>{{result.population }}</div>
+                    <div class='resultApi' ng-model='result.climate'  ng-hide='result.climate == undefinded'><div>Climate:</div>{{result.climate}}</div>
+                    <div class='resultApi' ng-model='result.surface_water'  ng-hide='result.surface_water == undefinded'><div>Surface water:</div>{{result.surface_water}}</div>                    
                 </div>
                 
             </div>

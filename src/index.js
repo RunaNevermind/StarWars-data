@@ -17,20 +17,16 @@ angular.module('apiHandler',[])
 
 
     $scope.find= function(){
-        if($scope.apiWookie===true){
-            $scope.apiWookie='?format=wookiee'
-        }
+        
         
         if($scope.apiName===''){
-            console.log('mass')
-            console.log(baseUrl+$scope.apiVal+'/'+$scope.apiName+$scope.apiWookie)
             fetch(baseUrl+$scope.apiVal+'/'+$scope.apiName+$scope.apiWookie)
             .then(res => res.json())
             .then(data => {
                 if($scope.apiVal==='films'){
                     for(var i = 0; i < data.result.length; i++){
                         console.log(data.result[i].properties)
-                        $scope.arrResult.push(data.result[i]);     
+                        $scope.arrResult.push(data.result[i].properties);     
                     }
 
                 }
@@ -45,7 +41,6 @@ angular.module('apiHandler',[])
         }
         else{
             if(/\D/.test($scope.apiName)){
-                console.log(baseUrl+$scope.apiVal+'/?name='+$scope.apiName+$scope.apiWookie)
                 fetch(baseUrl+$scope.apiVal+'/?name='+$scope.apiName+$scope.apiWookie)
                 .then(res => res.json())
                 .then(data => {
@@ -56,13 +51,11 @@ angular.module('apiHandler',[])
         
             }
             else{
-                console.log('id')
-                console.log(baseUrl+$scope.apiVal+'/'+$scope.apiName+'/'+$scope.apiWookie)
                 fetch(baseUrl+$scope.apiVal+'/'+$scope.apiName+'/'+$scope.apiWookie)
                 .then(res => res.json())
                 .then(data => {
                     console.log(data.result.properties)
-                    $scope.result.push(data.result.properties);
+                    $scope.arrResult.push(data.result.properties);
                 })
                 .catch(err => console.error(err))    
            
