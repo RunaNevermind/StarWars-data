@@ -41,11 +41,12 @@ angular.module('apiHandler',[])
         }
         else{
             if(/\D/.test($scope.apiName)){
+                console.log(baseUrl+$scope.apiVal+'/?name='+$scope.apiName+$scope.apiWookie)
                 fetch(baseUrl+$scope.apiVal+'/?name='+$scope.apiName+$scope.apiWookie)
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data.result.properties)
-                    $scope.arrResult.push(data.result.properties);
+                    console.log(data.result[0].properties)
+                    $scope.arrResult.push(data.result[0].properties);
                 })
                 .catch(err => console.error(err)) 
         

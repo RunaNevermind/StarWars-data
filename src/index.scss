@@ -77,8 +77,31 @@ body{
 .result{
     display: flex;
     flex-direction: column;
+    padding: 10px;
 }
 
 .resultApi{
     display: flex;
+}
+
+@media screen and (max-width: 768px){
+    .container{
+        margin: 20px 10px 0px 10px;
+    }
+    .container__api-form{
+        max-width: 350px;
+        padding: 20px;
+        margin-top: 15px;
+    }
+
+    .container__api-form-info{
+        font-size: 1.2rem;
+    }
+
+    .container__api-form-advice{
+        font-size: 1.1rem;
+        padding-top: 15px;
+    }
+
+
 }

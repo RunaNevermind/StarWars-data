@@ -9,7 +9,7 @@
     </head>
     <body ng-controller='apiCtrl'>
         <div class='container text-center'>
-            <h1 class=''>Star Wars Search</h1>
+            <h1 class='h1'>Star Wars Search</h1>
             <div class='container__api-form'>
                 <h3 class='container__api-form-info'>Looking for something?<br/>I can find it!</h3>
                 <select class='form-select' ng-model='apiVal'>
@@ -24,15 +24,14 @@
                 <h5 class='container__api-form-advice'>Write name or leave the field empty,<br/> if you want to get all from category</h5>
                 <input type='text' class='form-control' id='container__api-form-input' placeholder='Name or id' ng-model='apiName'>
                 <div class='container__api-form__buttons'>
-                    <div class='form-check'>
-                        <input class='form-check-input' type='checkbox' ng-model='apiWookie' ng-click='wookiee()' id='container__api-form__buttons-form-check'>
-                        <label class='form-check-label' for='container__api-form__buttons-form-check'>Wookiee</label>
-                    </div>
+                    <button type="button" class="btn btn-secondary" ng-model='apiWookie' ng-click='wookiee()'>Show</button>
                     <button type='button' class='btn btn-primary container__api-form__buttons-find' ng-click='find()'>Find!</button>
                 </div>
                 <div class='result text-center' ng-repeat="result in arrResult"  ng-model='arrResult'>
                     <div class='resultApi' ng-model='result.name' ng-hide='result.name == undefinded'><div>Name:</div>{{result.name}}</div>
                     <div class='resultApi' ng-model='result.skin_color' ng-hide='result.skin_color == undefinded'><div>Skin color:</div>{{result.skin_color}}</div>
+                    <div class='resultApi' ng-model='result.eye_color' ng-hide='result.eye_color == undefinded'><div>Eye color:</div>{{result.eye_color}}</div>
+                    <div class='resultApi' ng-model='result.mass' ng-hide='result.mass == undefinded'><div>Mass:</div>{{result.mass}}</div>
                     <div class='resultApi' ng-model='result.uid' ng-hide='result.uid == undefinded'><div>Episode id:</div>{{result.uid}}</div>
                     <div class='resultApi' ng-model='result.director'  ng-hide='result.director == undefinded'><div>Director:</div>{{result.director}}</div>
                     <div class='resultApi' ng-model='result.created'  ng-hide='result.created == undefinded'><div>Created:</div>{{result.created}}</div>
@@ -51,7 +50,6 @@
                     <div class='resultApi' ng-model='result.climate'  ng-hide='result.climate == undefinded'><div>Climate:</div>{{result.climate}}</div>
                     <div class='resultApi' ng-model='result.surface_water'  ng-hide='result.surface_water == undefinded'><div>Surface water:</div>{{result.surface_water}}</div>                    
                 </div>
-                
             </div>
         </div>
     </body>
